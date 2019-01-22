@@ -66,7 +66,7 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: @"Detail"]) {
         detailViewController * destination = segue.destinationViewController;
-        destination.imageName = self.tappedImage.;
+        destination.imageName = self.tappedImage;
        
     }
 }
