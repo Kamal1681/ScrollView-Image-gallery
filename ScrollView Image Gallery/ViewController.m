@@ -50,17 +50,10 @@
 }
 
 - (void) tapImage: (UITapGestureRecognizer *) sender {
+    NSArray <UIImage *>* imageArray = @[self.image1.image, self.image2.image, self.image3.image];
     
-    CGFloat width = (float)self.scrollView.contentSize.width / 3.0;
-   
-    CGPoint locationInView = [sender locationInView:sender.view];
-    
-    if (locationInView.x < width ) { self.tappedImage = self.image1.image;}
-    
-    if (locationInView.x > width && locationInView.x < width *2) { self.tappedImage = self.image2.image;}
-    
-    if (locationInView.x > width * 2) { self.tappedImage = self.image3.image;}
-    
+    self.tappedImage = imageArray[self.pageControl.currentPage];
+
    [self performSegueWithIdentifier:@"Detail" sender:sender];
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
